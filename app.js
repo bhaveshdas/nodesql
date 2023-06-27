@@ -1,5 +1,5 @@
 const path = require('path');
-
+require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -29,9 +29,9 @@ const csrfProtection = csrf();
 
 const options = {
   connectionLimit: 10,
-  password: 'e4d5exd5Qxd5Nc3',
-  user : 'root',
-  database : 'node_complete',
+  password: process.env.DBpass,
+  user : process.env.DBuser,
+  database : process.env.DBname,
   createDatabaseTable : true
 }
 
